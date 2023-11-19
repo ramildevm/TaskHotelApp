@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.taskhotelapp.presentation.ExpandableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/small_margin"
+    app:cardCornerRadius="@dimen/main_corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/main_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/secondary_margin"
+                app:cardCornerRadius="@dimen/small_corner_radius"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryBack">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/round_keyboard_arrow_down_24"
+                        android:tag="arrowExpand"
+                        android:contentDescription="@string/app_name" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_margin" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tourist_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:textColorHint="@color/light_gray_text"
+                app:boxBackgroundColor="@color/light_gray_background"
+                app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tourist_name_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="50"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/small_margin" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tourist_surname_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/surname"
+                android:textColorHint="@color/light_gray_text"
+                app:boxBackgroundColor="@color/light_gray_background"
+                app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tourist_surname_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="50"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/small_margin" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tourist_birth_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/date_birth"
+                app:cursorErrorColor="@color/error"
+                android:textColorHint="@color/light_gray_text"
+                app:boxBackgroundColor="@color/light_gray_background"
+                app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tourist_birth_date_txt"
+                    android:layout_width="match_parent"
+                    android:inputType="date"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/small_margin" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tourist_citizenship_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/citizenship"
+                android:textColorHint="@color/light_gray_text"
+                app:boxBackgroundColor="@color/light_gray_background"
+                app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tourist_citizenship_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="9"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/small_margin" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tourist_int_passport_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/int_passport_number"
+                android:textColorHint="@color/light_gray_text"
+                app:boxBackgroundColor="@color/light_gray_background"
+                app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tourist_int_passport_number_txt"
+                    android:layout_width="match_parent"
+                    android:maxLength="15"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/small_margin" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tourist_int_passport_expiration_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/int_passport_expiration_date"
+                android:textColorHint="@color/light_gray_text"
+                app:boxBackgroundColor="@color/light_gray_background"
+                app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="50"
+                    android:inputType="date"
+                    android:id="@+id/tourist_int_passport_expiration_txt"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.example.taskhotelapp.presentation.ExpandableLayout>

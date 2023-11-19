@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/hotelDetailsFragment">
+
+    <fragment
+        android:id="@+id/hotelDetailsFragment"
+        android:name="com.example.taskhotelapp.presentation.ui.hotel_details.HotelDetailsFragment"
+        android:label="HotelDetailsFragment">
+
+        <action
+            android:id="@+id/action_hotelDetailsFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.example.taskhotelapp.presentation.ui.rooms.RoomsFragment"
+        android:label="RoomsFragment">
+
+        <action
+            android:id="@+id/action_roomsFragment_to_roomBookingFragment"
+            app:destination="@id/roomBookingFragment" />
+
+        <action
+            android:id="@+id/action_roomsFragment_to_hotelDetailsFragment"
+            app:destination="@id/hotelDetailsFragment"
+            app:popUpTo="@+id/hotelDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roomBookingFragment"
+        android:name="com.example.taskhotelapp.presentation.ui.room_booking.RoomBookingFragment"
+        android:label="RoomBookingFragment">
+
+        <action
+            android:id="@+id/action_roomBookingFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment"
+            app:popUpTo="@+id/roomsFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_roomBookingFragment_to_orderResultFragment"
+            app:destination="@id/orderResultFragment"
+            app:popUpTo="@+id/orderResultFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderResultFragment"
+        android:name="com.example.taskhotelapp.presentation.ui.order_result.OrderResultFragment"
+        android:label="OrderResultFragment">
+
+        <action
+            android:id="@+id/action_orderResultFragment_to_roomBookingFragment"
+            app:destination="@id/roomBookingFragment"
+            app:popUpTo="@+id/roomBookingFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_orderResultFragment_to_hotelDetailsFragment"
+            app:destination="@id/hotelDetailsFragment"
+            app:popUpTo="@+id/hotelDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

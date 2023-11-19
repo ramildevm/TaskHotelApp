@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/light_gray_background"
+    app:cardCornerRadius="@dimen/small_corner_radius"
+    app:cardElevation="0dp">
+
+    <TextView
+        android:id="@+id/title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:paddingHorizontal="@dimen/secondary_margin"
+        android:paddingVertical="@dimen/tiny_margin"
+        android:textColor="@color/light_gray_blue_text"
+        android:textFontWeight="500"
+        android:textSize="16sp"
+        tools:text="Бесплатный вайфай" />
+</androidx.cardview.widget.CardView>

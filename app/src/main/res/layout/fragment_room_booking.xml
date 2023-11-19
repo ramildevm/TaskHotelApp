@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/light_gray_background"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/top_go_back_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/main_margin"
+                android:layout_marginVertical="@dimen/small_margin"
+                android:padding="@dimen/small_margin"
+                android:rotation="180"
+                android:src="@drawable/round_arrow_forward_ios_24"
+                android:contentDescription="@string/app_name" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:padding="10dp"
+                android:text="@string/booking"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:fitsSystemWindows="true"
+        tools:context=".presentation.ui.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:background="@color/light_gray_background"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/main_margin" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        app:cardCornerRadius="@dimen/small_corner_radius">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#33FFC700"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@string/star"
+                                android:src="@drawable/baseline_star_24" />
+
+                            <TextView
+                                android:id="@+id/rating_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:textColor="#FFA800"
+                                android:textSize="16sp"
+                                tools:text="5 " />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/small_margin" />
+
+                    <TextView
+                        android:id="@+id/hotel_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        tools:text="Лучший пятизвездочный отель в Хургаде, Египет" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/small_margin" />
+
+                    <TextView
+                        android:id="@+id/hotel_address_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:textColor="#0D72FF"
+                        android:textSize="14sp"
+                        tools:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_margin" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_margin" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/main_margin"
+                    android:paddingVertical="@dimen/small_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/departure_from"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/departure_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="Санкт-Петербург" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/City_country"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/arrival_country_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="Египет, Каир" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/dates"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/dates_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="2001-23-09 - 2003-04-05" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/number_of_nights"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/nights_num_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="7" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/hotel"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/hotel_name_inner_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="New Yourk Hotel Plaza" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/room"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/room_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="President palace" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:text="@string/nutrition"
+                                android:textColor="@color/light_gray_blue_text"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".6">
+
+                            <TextView
+                                android:id="@+id/nutrition_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="Всё включено" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_margin" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/main_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:text="@string/costumer_info"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_margin" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textNumberField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/number"
+                            android:textColorHint="@color/light_gray_text"
+                            app:boxStrokeWidth="0dp"
+                            app:errorTextColor="@color/error"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:boxBackgroundColor="@color/light_gray_background"
+                            app:cursorErrorColor="@color/error"
+                            app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                            app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                            app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                            app:boxCornerRadiusTopStart="@dimen/medium_corner_radius">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textNumberFieldInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/small_margin" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textEmailField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        app:errorTextColor="@color/error"
+                        app:boxStrokeErrorColor="@color/error"
+                        app:cursorErrorColor="@color/error"
+                        android:textColorHint="@color/light_gray_text"
+                        app:boxBackgroundColor="@color/light_gray_background"
+                        app:boxCornerRadiusBottomEnd="@dimen/medium_corner_radius"
+                        app:boxCornerRadiusBottomStart="@dimen/medium_corner_radius"
+                        app:boxCornerRadiusTopEnd="@dimen/medium_corner_radius"
+                        app:boxCornerRadiusTopStart="@dimen/medium_corner_radius"
+                        app:boxStrokeWidth="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textEmailFieldInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/small_margin" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:text="@string/data_protection_rich_txt"
+                        android:textColor="@color/light_gray_blue_text"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/small_margin" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tourists_container"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_margin"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:text="@string/add_new_tourist"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/add_tourist_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_square"
+                        android:contentDescription="@string/add_new_tourist" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/main_margin"
+                    android:paddingVertical="@dimen/small_margin"
+                    tools:ignore="TooManyViews">
+
+
+                    <LinearLayout
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="@string/tour"
+                            android:textColor="@color/light_gray_blue_text"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/tour_price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="186 000 ₽" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="@string/fuel_charge"
+                            android:textColor="@color/light_gray_blue_text"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/fuel_price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="8 000 ₽" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="@string/service_charge"
+                            android:textColor="@color/light_gray_blue_text"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/service_price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="6 000 ₽" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginVertical="@dimen/small_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="@string/total_price"
+                            android:textColor="@color/light_gray_blue_text"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/total_price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sf_pro_display_semibold"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            tools:text="198 000 ₽" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/go_rooms_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/main_margin"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:padding="15dp"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:cornerRadius="15dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/info_layout"
+        android:visibility="gone"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+        <TextView
+            android:id="@+id/message_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>

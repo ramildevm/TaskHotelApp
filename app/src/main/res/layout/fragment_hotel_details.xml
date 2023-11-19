@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray_background">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:padding="10dp"
+                android:text="@string/hotel"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray_background"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/secondary_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/image_pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginVertical="@dimen/main_margin"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:background="@color/black" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/small_margin"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <me.relex.circleindicator.CircleIndicator3
+                                android:id="@+id/indicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:background="@color/white"
+                                android:paddingHorizontal="@dimen/secondary_margin"
+                                app:ci_drawable="@drawable/dot_selected"
+                                app:ci_drawable_unselected="@drawable/dot_default"
+                                app:circularflow_radiusInDP="10dp" />
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/main_margin" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        app:cardCornerRadius="@dimen/small_corner_radius">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#33FFC700"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@string/star"
+                                android:src="@drawable/baseline_star_24" />
+
+                            <TextView
+                                android:id="@+id/rating_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:textColor="#FFA800"
+                                android:textSize="16sp"
+                                tools:text="5 " />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/small_margin" />
+
+                    <TextView
+                        android:id="@+id/hotel_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        tools:text="Лучший пятизвездочный отель в Хургаде, Египет" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/small_margin" />
+
+                    <TextView
+                        android:id="@+id/hotel_address_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:textColor="#0D72FF"
+                        android:textSize="14sp"
+                        tools:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_margin" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin">
+
+                        <TextView
+                            android:id="@+id/minimal_price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            tools:text="от 123 990 Р" />
+
+                        <Space
+                            android:layout_width="@dimen/small_margin"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/price_for_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:textColor="@color/light_gray_blue_text"
+                            android:textSize="16sp"
+                            tools:text="за тур с перелётом" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_margin" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_margin" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/main_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/main_margin"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/about_the_hotel"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="26sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/peculiarities_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin" />
+
+                    <TextView
+                        android:id="@+id/description_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/main_margin"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:text="Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/main_margin"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/extra_light_gray_background"
+                            android:divider="@color/black"
+                            android:orientation="vertical"
+                            android:padding="@dimen/main_smaller_margin">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/start_icon_comfort"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentStart="true"
+                                    android:contentDescription="@string/comfortables"
+                                    android:src="@drawable/emoji_happy"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/start_icon_comfort"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/sf_pro_display_medium"
+                                        android:text="@string/comfortables"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/sf_pro_display_medium"
+                                        android:text="@string/most_important"
+                                        android:textColor="@color/gray_text"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/end_icon_comfort"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/comfortables"
+                                    android:src="@drawable/round_arrow_forward_ios_24"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginVertical="@dimen/secondary_margin"
+                                android:layout_marginStart="42dp"
+                                android:alpha="0.15"
+                                app:dividerColor="@color/gray_text" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/start_icon_include"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentStart="true"
+                                    android:contentDescription="@string/what_included"
+                                    android:src="@drawable/tick_square"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/start_icon_include"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/sf_pro_display_medium"
+                                        android:text="@string/what_included"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/sf_pro_display_medium"
+                                        android:text="@string/most_important"
+                                        android:textColor="@color/gray_text"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/end_icon_include"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/what_included"
+                                    android:src="@drawable/round_arrow_forward_ios_24"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginVertical="@dimen/secondary_margin"
+                                android:layout_marginStart="42dp"
+                                android:alpha="0.15"
+                                app:dividerColor="@color/gray_text" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/start_icon_not_included"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentStart="true"
+                                    android:contentDescription="@string/what_not_included"
+                                    android:src="@drawable/close_square"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/start_icon_not_included"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/sf_pro_display_medium"
+                                        android:text="@string/what_not_included"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/sf_pro_display_medium"
+                                        android:text="@string/most_important"
+                                        android:textColor="@color/gray_text"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/end_icon_not_included"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/what_not_included"
+                                    android:src="@drawable/round_arrow_forward_ios_24"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_margin" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_margin" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <Button
+                    android:id="@+id/go_room_choose_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/main_margin"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:padding="15dp"
+                    android:text="@string/to_choosing_room"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:cornerRadius="15dp">
+
+                </Button>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/info_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+        <TextView
+            android:id="@+id/message_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
