@@ -74,7 +74,8 @@ class RoomBookingFragment : Fragment() {
                             .navigate(R.id.action_roomBookingFragment_to_orderResultFragment)
                     }
                     RoomBookingViewModel.ValidationEvent.Error -> {
-                        adapter.updateDataSet(adapter.getValidatedItems())
+                        //adapter.updateDataSet(adapter.getValidatedItems())
+                        resetAdapterState()
                         Toast.makeText(
                             requireActivity(),
                             getString(R.string.not_all_fields_correct_warning),
@@ -101,7 +102,10 @@ class RoomBookingFragment : Fragment() {
         }
         return binding.root
     }
-
+    private fun resetAdapterState() {
+        val myAdapter = binding.touristsContainer.adapter
+        binding.touristsContainer.adapter = myAdapter
+    }
     private fun bindData(data: RoomBooking?) {
         binding.apply{
             data?.let{

@@ -56,7 +56,12 @@ class TouristFormAdapter(
             formatWatcherBirthDate.installOn(birthDateEditText)
             val formatWatcherExpDate: FormatWatcher = MaskFormatWatcher(MaskImpl.createTerminated(slots))
             formatWatcherExpDate.installOn(intPassportExpirationEditText)
-
+            nameEditText.setText(tourist.name)
+            surnameEditText.setText(tourist.surname)
+            birthDateEditText.setText(tourist.birthDate)
+            citizenshipEditText.setText(tourist.citizenship)
+            intPassportNumberEditText.setText(tourist.intPassportNumber)
+            intPassportExpirationEditText.setText(tourist.intPassportExpirationDate)
             nameEditText.addTextChangedListener(createValidationTextWatcher{text->
                 onEvent(TouristFormEvent.NameChanged(text), position)
             })
@@ -187,11 +192,10 @@ class TouristFormAdapter(
 
     fun add(touristForm: TouristFormState) {
         touristStateList.add(touristForm.apply { id = touristStateList.size})
-        notifyItemInserted(touristStateList.size-1)
+        notifyItemInserted(touristStateList.size)
     }
-
-    fun getValidatedItems(): List<TouristFormState> {
-        return touristStateList.map {
+    fun getValidatedItems(): ArrayList<TouristFormState> {
+        return ArrayList(touristStateList.map {
             it.nameError = validateNameUseCase.execute(it.name).errorMessage
             it.surnameError = validateSurnameUseCase.execute(it.surname).errorMessage
             it.birthDateError = validateBirthDateUseCase.execute(it.birthDate).errorMessage
@@ -199,14 +203,7 @@ class TouristFormAdapter(
             it.intPassportNumberError = validateIntPassportNumberUseCase.execute(it.intPassportNumber).errorMessage
             it.intPassportExpirationDateError = validateIntPassportExpirationDateUseCase.execute(it.intPassportExpirationDate).errorMessage
             it
-        }.sortedByDescending { it.id }
+        }.sortedBy { it.id })
     }
 
-    fun updateDataSet(validatedItems: List<TouristFormState>) {
-        touristStateList.clear()
-        notifyDataSetChanged()
-        for(tourist in validatedItems){
-            add(tourist)
-        }
-    }
 }
